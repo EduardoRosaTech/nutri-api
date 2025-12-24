@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from app.routers import nutrition
 
 app = FastAPI(
     title="Nutri API",
@@ -9,9 +8,7 @@ app = FastAPI(
 @app.get("/")
 def root():
     return {
-        "status": "ok",
-        "message": "Nutri API online",
+        "status": "online",
+        "message": "Nutri API funcionando",
         "docs": "/docs"
     }
-
-app.include_router(nutrition.router)
